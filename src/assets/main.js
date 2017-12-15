@@ -6,4 +6,12 @@ function guess() {
     //add functionality to guess function here
 }
 
-//implement new functions here
+function setHiddenFields() {
+    const zeros = ['', '0', '00', '000', '0000'];
+    const guess = Math.floor(Math.random() * 10000);
+    const add = 4 - guess.toString().length;
+    answer.value = zeros[add] + guess.toString();
+    attempt.value = 0;
+}
+
+setHiddenFields();
